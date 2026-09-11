@@ -1,0 +1,152 @@
+@import '@fontsource/fraunces/400.css';
+@import '@fontsource/fraunces/500.css';
+@import '@fontsource/fraunces/600.css';
+@import '@fontsource/fraunces/400-italic.css';
+@import '@fontsource/manrope/400.css';
+@import '@fontsource/manrope/500.css';
+@import '@fontsource/manrope/600.css';
+@import '@fontsource/manrope/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #f4e6d8;
+  --color-surface: #fbf3e8;
+  --color-surface-elevated: #fffbf5;
+  --color-border: rgba(58, 43, 34, 0.12);
+
+  --color-text-primary: #2b2320;
+  --color-text-secondary: #6b5849;
+  --color-text-muted: #9c8a79;
+
+  --color-accent: #ca704b;
+  --color-accent-hover: #b25e3d;
+  --color-accent-soft: rgba(202, 112, 75, 0.14);
+
+  --color-success: #4f7a5b;
+  --color-warning: #b8863a;
+  --color-error: #b3503e;
+
+  --color-sidebar-bg: #faf1e4;
+  --color-sidebar-text: #4a3c31;
+  --color-sidebar-text-muted: #97836f;
+  --color-sidebar-active: rgba(202, 112, 75, 0.16);
+  --color-sidebar-active-text: #ca704b;
+  --color-sidebar-border: rgba(58, 43, 34, 0.1);
+
+  color-scheme: light;
+}
+
+.dark {
+  --color-bg: #211a16;
+  --color-surface: #2a2119;
+  --color-surface-elevated: #33281f;
+  --color-border: rgba(244, 230, 216, 0.1);
+
+  --color-text-primary: #f4e6d8;
+  --color-text-secondary: #cbb6a2;
+  --color-text-muted: #8d7a6a;
+
+  --color-accent: #dd8659;
+  --color-accent-hover: #e8996d;
+  --color-accent-soft: rgba(221, 134, 89, 0.16);
+
+  --color-success: #7bab86;
+  --color-warning: #d3a768;
+  --color-error: #cc7b69;
+
+  --color-sidebar-bg: #241c17;
+  --color-sidebar-text: #ecdbc9;
+  --color-sidebar-text-muted: #8d7a6a;
+  --color-sidebar-active: rgba(221, 134, 89, 0.18);
+  --color-sidebar-active-text: #f0a071;
+  --color-sidebar-border: rgba(244, 230, 216, 0.08);
+
+  color-scheme: dark;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+::selection {
+  background-color: var(--color-accent-soft);
+  color: var(--color-text-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .text-display {
+    @apply font-display text-4xl sm:text-5xl leading-[1.08] tracking-tight text-text-primary;
+  }
+  .text-page-heading {
+    @apply font-display text-2xl sm:text-3xl leading-tight tracking-tight text-text-primary;
+  }
+  .text-section-heading {
+    @apply font-display text-lg sm:text-xl leading-snug text-text-primary;
+  }
+  .text-body {
+    @apply font-sans text-[0.9375rem] leading-relaxed text-text-primary;
+  }
+  .text-secondary {
+    @apply font-sans text-sm leading-relaxed text-text-secondary;
+  }
+  .text-muted {
+    @apply font-sans text-sm text-text-muted;
+  }
+  .text-label {
+    @apply font-sans text-[0.8125rem] font-medium text-text-secondary;
+  }
+  .text-caption {
+    @apply font-sans text-xs text-text-muted;
+  }
+
+  .surface-card {
+    @apply bg-surface border border-border rounded-xl;
+  }
+  .surface-elevated {
+    @apply bg-surface-elevated border border-border rounded-xl shadow-soft;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 999px;
+}

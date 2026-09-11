@@ -1,0 +1,44 @@
+import { Router } from 'express';
+import healthRoutes from './health.routes.js';
+import authRoutes from './auth.routes.js';
+import subjectRoutes from './subject.routes.js';
+import topicRoutes from './topic.routes.js';
+import examRoutes from './exam.routes.js';
+import assignmentRoutes from './assignment.routes.js';
+import taskRoutes from './task.routes.js';
+import availabilityRoutes from './availability.routes.js';
+import studyPlanRoutes from './studyPlan.routes.js';
+import studySessionRoutes from './studySession.routes.js';
+import studyPerformanceRoutes from './studyPerformance.routes.js';
+import analyticsRoutes from './analytics.routes.js';
+import streakRoutes from './streak.routes.js';
+import progressRoutes from './progress.routes.js';
+import adaptiveScheduleRoutes from './adaptiveSchedule.routes.js';
+import pushRoutes from './push.routes.js';
+import notificationRoutes from './notification.routes.js';
+import eodTestRoutes from './eodTest.routes.js';
+import evaluationRoutes from './evaluation.routes.js';
+
+const router = Router();
+
+router.use('/', healthRoutes);
+router.use('/auth', authRoutes);
+router.use('/subjects', subjectRoutes);
+router.use('/topics', topicRoutes);
+router.use('/exams', examRoutes);
+router.use('/assignments', assignmentRoutes);
+router.use('/tasks', taskRoutes);
+router.use('/availability', availabilityRoutes);
+router.use('/study-plans', studyPlanRoutes);
+router.use('/study-sessions', studySessionRoutes);
+router.use('/performance', studyPerformanceRoutes);
+router.use('/analytics', analyticsRoutes);
+router.use('/streaks', streakRoutes);
+router.use('/progress', progressRoutes);
+router.use('/adaptive', adaptiveScheduleRoutes);
+router.use('/push', pushRoutes);
+router.use('/notifications', notificationRoutes);
+router.use('/eod-test', eodTestRoutes);
+router.use('/evaluation', evaluationRoutes);
+
+export default router;
